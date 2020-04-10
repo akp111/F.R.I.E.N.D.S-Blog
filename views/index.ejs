@@ -1,0 +1,38 @@
+<%- include("partials/header") %>
+<br>
+<br>
+<!-- <%= friends %> -->
+<% friends.forEach((friend)=>{ %>
+    <!-- <div class="posts" id="ui card">
+        <h2><%= friend.title %></h2>
+        <img class="ui big rounded image" src="<%= friend.image %>" alt="image">
+        <h2><%= friend.Created.toDateString() %></h2>
+        <p><%- friend.body.substring(0,10)%>....</p> to limit data use .substring(0,2)  -->
+        <!-- <a href="/friends/<%= friend._id %>"><button class="ui default button">Read More</button></a>
+    </div>  -->
+    <br>
+    <div class="ui centered card" id="co">
+        <div class="image">
+          <img src="<%= friend.image %>">
+        </div>
+        <div class="content">
+          <span class="header"><%= friend.title %></span>
+          <div class="meta">
+            <span class="date"><%= friend.Created.toDateString() %></span>
+          </div>
+          <div class="description">
+            <%- friend.body.substring(0,10)%>....
+          </div>
+        </div>
+        <div class="extra content">
+            <a href="/friends/<%= friend._id %>"><button class="ui default button">
+              Read More
+             </button>
+            </a>
+          </div>
+      </div>
+      <br>
+      
+<% }) %>
+
+<%- include("partials/footer") %>
